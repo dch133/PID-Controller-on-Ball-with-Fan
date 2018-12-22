@@ -5,7 +5,7 @@ I implemented the equation and by trial and error calculated the Kp, Kd and Ki v
 
 Integral was approximated by a sum
 
-Derivative was apporximated by a difference of current_error and previous_error over delta_t
+Derivative was approximated by a difference of current_error and previous_error over delta_t
 
 frame rate (delta_t) = 1/60
 

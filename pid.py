@@ -50,11 +50,11 @@ class PIDController:
         #calculate the error function at every frame
         prev_error = self.error_at_t
         self.error_at_t = self.target_pos - vertical_ball_position
-        self.error_0_to_t += self.error_at_t
+        self.error_0_to_t += self.error_at_t*delta_t
 
         #calculate pid:  u(t) = K_p e(t) + K_i \int_{0}^{t} e(t)dt + K_d {de}/{dt}
         _P = self.Kp * self.error_at_t
-        _I = self.Ki * self.error_0_to_t*delta_t
+        _I = self.Ki * self.error_0_to_t
         _D = self.Kd * (self.error_at_t - prev_error) / delta_t
         output = _P + _I + _D
 
